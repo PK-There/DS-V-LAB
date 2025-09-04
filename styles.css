@@ -1,0 +1,54 @@
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+}
+#header{
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+#list{
+    
+}
+#list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+#list li {
+    display: inline;
+}
+
+#list a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: background 0.3s;
+}
+
+#list a:hover {
+    background: #333;
+    border-radius: 4px;
+}
+#symbol{
+    
+}
+#login{
+    border: 2px solid transparent;
+    background-color: #d6b9fc;
+    border-radius: 20px;
+    line-height: 30px;
+    height: 30px;
+    width: 70px;
+    color: black;
+    text-align: center;
+    margin-right: 28px;
+}
