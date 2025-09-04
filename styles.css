@@ -60,6 +60,11 @@ body{
 #symbol{
     
 }
+#login-signup{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
 #login{
     border: 2px solid transparent;
     background-color: #d6b9fc;
@@ -69,5 +74,5 @@ body{
     width: 70px;
     color: black;
     text-align: center;
-    margin-right: 28px;
+    margin-right: 10px;
 }
