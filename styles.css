@@ -23,7 +23,7 @@ body{
     backdrop-filter: blur(10px);
 
     /* White inner glow at bottom */
-    box-shadow: inset 0px -10px 20px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0px -1px 20px rgba(255, 255, 255, 0.5);
 }
 
 #list {
