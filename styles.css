@@ -1,20 +1,31 @@
 body{
+    padding-top: 80px;
     background-color: black;
     font-family: 'Asimovian';
   font-weight: 400;
   font-style: normal;
 }
-#header{
-    color: white;
+#header {
+    position: fixed;
+    top: 0;
+    width: 101%;
+    z-index: 1000;
+    margin-left: -12px;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid black;
-    border-bottom:2px solid white;
-    padding: 10px 0px 10px 0px;
-;
+    padding: 10px 0;
+    box-sizing: border-box;
+    /* Glass effect */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+
+    /* White inner glow at bottom */
+    box-shadow: inset 0px -10px 20px rgba(255, 255, 255, 0.5);
 }
+
 #list {
 }
 
@@ -78,4 +89,34 @@ body{
     color: black;
     text-align: center;
     margin-right: 10px;
+}
+#hpbigflex{
+    display: flex;
+    flex-direction: column;
+    order: 2px solid white;
+    color: white;
+    justify-content: center;
+}
+
+#hpb1{
+    text-align: center;
+    order: 2px solid white;
+}
+.hpb1b{
+    padding: 10px;
+    margin: 30px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+#hpb2{
+    text-align: center;
+    order: 2px solid white;
+    
+}
+.hpb2b{
+    border: 2px solid white;
+    height: 270px;
+    width: 400px;
+    margin: 20px;
+    border-radius: 20px;
 }
