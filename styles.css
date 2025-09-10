@@ -55,24 +55,10 @@ body {
     letter-spacing: 0.03em;
 }
 
-#list a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 22px;
-    right: 22px;
-    bottom: 6px;
-    height: 3px;
+#list a:hover, #list a:focus {
     background: linear-gradient(90deg, #D6B9FC 0%, #838CE5 100%);
-    border-radius: 2px;
-    transform: scaleX(0);
-    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-    pointer-events: none;
-}
-
-#list a:hover::after,
-#list a:focus::after {
-    transform: scaleX(1);
+    color: #181629;
+    box-shadow: 0 2px 12px #838CE555;
 }
 
 #login-signup {
