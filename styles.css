@@ -101,8 +101,6 @@ body {
     flex-direction: column;
     color: white;
     justify-content: center;
-    margin-top: 40px;
-    gap: 64px;
 }
 
 #hpb1, #hpb2, #hpb3 {
@@ -206,7 +204,6 @@ body {
 
 #footer {
     margin-top: 60px;
-    padding: 40px 0 20px 0;
     text-align: center;
     color: #838CE5;
     font-size: 1.1rem;
