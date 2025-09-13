@@ -26,6 +26,9 @@ body {
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
 }
+.desc{
+    font-family: 'Courier New', Courier, monospace !important;
+}
 
 #symbol img {
     filter: drop-shadow(0 2px 12px #50207A55);
@@ -37,6 +40,8 @@ body {
     padding: 0;
     display: flex;
     gap: 32px;
+    font-family:  monospace !important;
+    font-weight: bold;
 }
 
 #list li {
@@ -209,6 +214,24 @@ body {
     background: transparent;
 }
 
+#footer{
+    display: flex; 
+    flex-direction: column;
+    height: 400px;
+    border: 2px solid blanchedalmond ;
+
+}
+#footup{
+    border: 2px solid #838CE5;
+    height: 350px;
+    margin: 0;
+}
+#regards{
+    border: 2px solid #838CE5;
+    height: 50px;
+    margin: 0;
+
+}
 /* Responsive Design */
 @media (max-width: 1200px) {
     #hpb1, #hpb2, #hpb3 {
