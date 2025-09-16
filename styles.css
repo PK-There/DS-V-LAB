@@ -55,12 +55,48 @@ body {
     padding: 10px 22px;
     position: relative;
     border-radius: 12px;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
     font-weight: 500;
     letter-spacing: 0.03em;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
-#list a:hover, #list a:focus {
+/* Underline effect for all links */
+#list a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 6px;
+    height: 3px;
+    background: linear-gradient(90deg, #D6B9FC 0%, #838CE5 100%);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+}
+
+/* Show underline on hover/focus */
+#list a:hover::after,
+#list a:focus::after {
+    transform: scaleX(1);
+}
+
+/* Active (current page) only underline, no box */
+#list a.active {
+    background: none;
+    color: #D6B9FC;
+    box-shadow: none;
+}
+
+/* Always show underline for active link */
+#list a.active::after {
+    transform: scaleX(1);
+}
+
+/* On hover/focus (not active), show box and underline */
+#list a:not(.active):hover,
+#list a:not(.active):focus {
     background: linear-gradient(90deg, #D6B9FC 0%, #838CE5 100%);
     color: #181629;
     box-shadow: 0 2px 12px #838CE555;
