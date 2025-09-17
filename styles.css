@@ -239,26 +239,26 @@ body {
 }
 
 #footer {
+    display: flex; 
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    boder: 2px solid blanchedalmond ;
     margin-top: 60px;
     text-align: center;
     color: #838CE5;
     font-size: 1.1rem;
     letter-spacing: 0.04em;
     background: transparent;
-}
-
-#footer{
-    display: flex; 
-    flex-direction: column;
-    height: 400px;
-    border: 2px solid blanchedalmond ;
-
+    background-color: black;
 }
 #footup{
-    border: 2px solid #838CE5;
+    borer: 2px solid #838CE5;
     height: 350px;
-    margin: 0;
-    display: flex; flex-direction:row;
+    width: 100%
+fex-direction:row;
+    justify-content: center ;
+    color: white;
 }
 #regards{
     border: 2px solid #838CE5;
