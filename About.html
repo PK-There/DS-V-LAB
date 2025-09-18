@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Virtual Labs - Data Structures</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #00d4ff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    h2 {
+      color: #00d4ff;
+      margin-top: 0;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      color: #00d4ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+ <div id="header">
+     <div id="symbol">
+         <a><img src="logo.png" style="width: 93px; height: 40px;"></a>
+     </div>
+     <div id="list">
+         <ul>
+             <li><a href="#" class="active">Home</a></li>
+             <li><a href="lab.html">Lab</a></li>
+             <li><a href="About.html">About</a></li>
+             <li><a href="#">Something</a></li>
+         </ul>
+         </div>
+         <div id="login-signup">
+         <div id="login" onclick="window.location.href='login.html'">
+             <h style="text-align: center;">Login</h>
+         </div>
+         <div id="login" onclick="window.location.href='signup.html'">
+             <h style="text-align: center;">sign up</h>
+         </div>
+         </div>
+        </div>
+    </div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Our Mission</h2>
+      <p>The Virtual Labs platform aims to make learning Data Structures interactive and practical. 
+         Instead of just reading theory, students can perform experiments and run simulations to 
+         understand concepts like arrays, stacks, queues, linked lists, trees, and graphs in depth.</p>
+    </div>
+
+    <div class="card">
+      <h2>What We Offer</h2>
+      <ul>
+        <li>Interactive simulations of common data structures</li>
+        <li>Step-by-step experiments to visualize algorithms</li>
+        <li>Hands-on practice for students preparing for exams and interviews</li>
+        <li>Easy-to-understand explanations with real-time visualization</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Who Can Use It?</h2>
+      <p>This platform is designed for:</p>
+      <ul>
+        <li>Engineering and computer science students</li>
+        <li>Beginners learning Data Structures and Algorithms (DSA)</li>
+        <li>Educators looking for visual teaching aids</li>
+        <li>Anyone interested in strengthening problem-solving skills</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Why Choose Virtual Labs?</h2>
+      <p>Data Structures can be abstract and difficult to visualize. 
+         With our Virtual Labs, you can <b>see algorithms in action</b>, 
+         debug step by step, and develop an intuitive understanding of 
+         complex topics that are otherwise tough to grasp from books alone.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Virtual Labs - Data Structures | All Rights Reserved
+  </footer>
+
+</body>
+</html>
