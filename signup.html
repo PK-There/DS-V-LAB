@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Lab - Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Asimovian & Gowun Batang fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #170A21;
+            color: #E2E8F0;
+        }
+        .signup-card {
+            background-color: #2D183A;
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 10px -2px rgba(0, 0, 0, 0.2);
+        }
+        .input-group {
+            position: relative;
+        }
+        .input-group .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #A0AEC0;
+        }
+        
+        /* Header specific styles */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #2D183A;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        #list ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        #list a {
+            text-decoration: none;
+            color: #E2E8F0;
+            font-family: 'Gowun Batang', serif;
+            font-weight: 400;
+        }
+        #list a.active {
+            font-weight: 700;
+            border-bottom: 2px solid #E2E8F0;
+        }
+        #login-signup {
+            display: flex;
+            gap: 10px;
+        }
+        #login, #signup {
+            padding: 8px 16px;
+            border: 1px solid #4A2B5C;
+            border-radius: 20px;
+            cursor: pointer;
+            text-align: center;
+            font-family: 'Gowun Batang', serif;
+            color: #E2E8F0;
+        }
+        #login h, #signup h {
+            font-size: 16px;
+            font-weight: 400;
+            color: inherit;
+        }
+        #login:hover, #signup:hover {
+            background-color: #4A2B5C;
+        }
+        .signup-button {
+            background-image: linear-gradient(to right, #6B46C1, #9F7AEA);
+            color: #FFFFFF;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .signup-button:hover {
+            box-shadow: 0 4px 15px rgba(159, 122, 234, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-[#170A21] flex flex-col min-h-screen text-gray-200">
+
+    <!-- Sign Up Card Container -->
+    <div class="flex-grow flex items-center justify-center p-4">
+        <div class="signup-card p-8 md:p-12 rounded-2xl w-full max-w-sm md:max-w-md">
+
+            <!-- Logo and Heading -->
+            <div class="flex flex-col items-center space-y-2">
+                <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <img src="flask.jpeg" alt="Lab Icon" width="50" height="50" style="border-radius: 20px;">
+        <span style="color: white; font-size: 30px; margin-left: 10px; font-weight: 700;">Virtual Lab</span>
+        </div>
+                <h1 class="text-2xl font-semibold mt-4">Create Account</h1>
+               
+            </div>
+
+            <!-- Sign Up Form -->
+            <form class="mt-6 space-y-4">
+                <!-- Full Name Input -->
+                <div>
+                    <label for="fullname" class="block text-sm font-medium text-gray-300">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" class="mt-1 block w-full px-3 py-2 border border-[#4A2B5C] bg-[#2D183A] rounded-md shadow-sm focus:outline-none focus:ring-[#9F7AEA] focus:border-[#9F7AEA]">
+                </div>
+
+                <!-- Email Input -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" class="mt-1 block w-full px-3 py-2 border border-[#4A2B5C] bg-[#2D183A] rounded-md shadow-sm focus:outline-none focus:ring-[#9F7AEA] focus:border-[#9F7AEA]">
+                </div>
+
+                <!-- Password Input with Toggle -->
+                <div class="input-group">
+                    <label for="password" class="block text-sm font-medium text-gray-300">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" class="mt-1 block w-full px-3 py-2 border border-[#4A2B5C] bg-[#2D183A] rounded-md shadow-sm focus:outline-none focus:ring-[#9F7AEA] focus:border-[#9F7AEA]">
+                    <span class="toggle-password">
+                        <i id="eye-icon-password" class="fas fa-eye"></i>
+                    </span>
+                </div>
+
+                <!-- Confirm Password Input with Toggle -->
+                <div class="input-group">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-300">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" class="mt-1 block w-full px-3 py-2 border border-[#4A2B5C] bg-[#2D183A] rounded-md shadow-sm focus:outline-none focus:ring-[#9F7AEA] focus:border-[#9F7AEA]">
+                    <span class="toggle-password">
+                        <i id="eye-icon-confirm" class="fas fa-eye"></i>
+                    </span>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="flex items-center text-sm">
+                    <input id="terms" name="terms" type="checkbox" class="h-4 w-4 text-[#9F7AEA] focus:ring-[#9F7AEA] border-[#4A2B5C] bg-[#2D183A] rounded">
+                    <label for="terms" class="ml-2 block text-gray-300">
+                        I agree to the <a href="#" class="font-medium text-[#9F7AEA] hover:text-[#6B46C1]">Terms & Conditions</a> and <a href="#" class="font-medium text-[#9F7AEA] hover:text-[#6B46C1]">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <!-- Create Account Button -->
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm signup-button focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#9F7AEA]">
+                        Create Account
+                    </button>
+                </div>
+
+                <!-- Sign In Link -->
+                <p class="text-center text-sm text-gray-400">
+                    Already have an account? <a href="login.html" class="font-medium text-[#9F7AEA] hover:text-[#6B46C1]">Sign in here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+        const togglePassword = document.querySelector('.input-group .toggle-password');
+        const eyeIconPassword = document.getElementById('eye-icon-password');
+        const eyeIconConfirm = document.getElementById('eye-icon-confirm');
+
+        function setupPasswordToggle(inputElement, iconElement) {
+            const parentElement = inputElement.closest('.input-group');
+            if (parentElement) {
+                const toggleButton = parentElement.querySelector('.toggle-password');
+                if (toggleButton) {
+                    toggleButton.addEventListener('click', function () {
+                        const type = inputElement.getAttribute('type') === 'password' ? 'text' : 'password';
+                        inputElement.setAttribute('type', type);
+                        if (type === 'password') {
+                            iconElement.classList.remove('fa-eye-slash');
+                            iconElement.classList.add('fa-eye');
+                        } else {
+                            iconElement.classList.remove('fa-eye');
+                            iconElement.classList.add('fa-eye-slash');
+                        }
+                    });
+                }
+            }
+        }
+
+        setupPasswordToggle(passwordInput, eyeIconPassword);
+        setupPasswordToggle(confirmPasswordInput, eyeIconConfirm);
+    </script>
+</body>
+</html>
