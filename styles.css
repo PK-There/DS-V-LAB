@@ -1,7 +1,7 @@
 body {
     padding-top: 80px;
     background: #181629; /* deep black */
-    font-family: 'Asimovian', 'Gowun Batang', Arial, sans-serif;
+    font-family: 'Inter' , 'Asimovian', 'Gowun Batang', Arial, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #fff;
@@ -57,7 +57,7 @@ body {
     border-radius: 12px;
     font-weight: 500;
     letter-spacing: 0.03em;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background 0.15s, color 0.3s, box-shadow 0.30s;
 }
 
 /* Underline effect for all links */
@@ -72,7 +72,7 @@ body {
     background: linear-gradient(90deg, #D6B9FC 0%, #838CE5 100%);
     border-radius: 2px;
     transform: scaleX(0);
-    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    transition: transform 0.15s cubic-bezier(.4,0,.2,1);
     pointer-events: none;
 }
 
@@ -310,4 +310,14 @@ fex-direction:row;
         margin: 10px;
         border-radius: 12px;
     }
+}
+
+.lab-feature-box {
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1), border-color 0.25s;
+    cursor: pointer;
+}
+.lab-feature-box:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px #00bfff55;
+    border-color: white;
 }
