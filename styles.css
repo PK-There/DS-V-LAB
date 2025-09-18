@@ -318,3 +318,13 @@ body {
         border-radius: 12px;
     }
 }
+
+.lab-feature-box {
+    transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1), border-color 0.25s;
+    cursor: pointer;
+}
+.lab-feature-box:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 8px 32px #00bfff55;
+    border-color: white;
+}
