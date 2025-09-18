@@ -243,7 +243,7 @@ body {
     flex-direction: column;
     height: 400px;
     width: 100%;
-    boder: 2px solid blanchedalmond ;
+    border: 2px solid blanchedalmond ;
     margin-top: 60px;
     text-align: center;
     color: #838CE5;
@@ -253,10 +253,10 @@ body {
     background-color: black;
 }
 #footup{
-    borer: 2px solid #838CE5;
+    border: 2px solid #838CE5;
     height: 350px;
     width: 100%
-fex-direction:row;
+    fex-direction row ;
     justify-content: center ;
     color: white;
 }
