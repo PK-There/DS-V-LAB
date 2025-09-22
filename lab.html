@@ -71,38 +71,31 @@
         </div>
     </div>
 </div>
-<div style="
-    position: fixed;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    z-index: 998;
-    width: 100vw;
-    background: transparent;
-    text-align: center;
-">
-    
-    <nav id="lab-menu" style="display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 12px;">
-        <!-- menu links -->
-    </nav>
-</div>
+
 <div style="text-align: center; margin-top: 60px;">
     <button class="start-btn">
         Let's start ↓
     </button>
     <hr style="width: 90%; margin: 54px auto 12px auto; border: none; border-top: 2px solid #838CE5; opacity: 0.7;">
-    <nav id="lab-menu" style="display: flex; justify-content: center; gap: 4.5rem; margin-bottom: 22px; margin-top: 32px; flex-wrap: wrap;">
+    <div class="section-navbar-container">
+ 
+    <nav id="lab-menu" class="section-navbar">
+   
         <a href="#introduction" class="menu-link active">Introduction</a>
         <a href="#objective" class="menu-link">Objective</a>
         <a href="#experiments" class="menu-link">List of experiments</a>
         <a href="#audience" class="menu-link">Target Audience</a>
         <a href="#alignment" class="menu-link">Course Alignment</a>
         <a href="#feedback" class="menu-link">Feedback</a>
+       
     </nav>
+
+</div>
 </div>
 <div id="introduction" style="margin-top:120px;">
     <!-- Introduction content here -->
 </div>
+<br><br><br><br><br>
 <div style="
     width: 85%;
     margin: 32px auto;
@@ -196,6 +189,17 @@ document.querySelector('.start-btn').addEventListener('click', function() {
             top: target.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
         });
+    }
+});
+
+const navbarContainer = document.querySelector('.section-navbar-container');
+const navbarOffset = navbarContainer.offsetTop;
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > navbarOffset) {
+        navbarContainer.classList.add('section-navbar-fixed');
+    } else {
+        navbarContainer.classList.remove('section-navbar-fixed');
     }
 });
 </script>
