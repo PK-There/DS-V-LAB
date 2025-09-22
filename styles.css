@@ -376,7 +376,12 @@ body {
         border-radius: 12px;
     }
 }
-
+.hpb3b img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
 .feature-box {
     transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1), border-color 0.25s;
     cursor: pointer;
