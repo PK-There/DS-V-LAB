@@ -432,9 +432,10 @@ body {
 
 
 .exp-box {
+    margin-top:50px;
     width: 90%;
     min-width: 220px;
-    min-height: 220px;
+    min-height: 270px;
     background: linear-gradient(135deg, #181629 60%, #838CE5 100%);
     border: 1.5px solid #838CE5;
     border-radius: 28px;
@@ -446,7 +447,7 @@ body {
     color: #fff;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 600;
-    margin: 0 auto;
+
     transition: box-shadow 0.2s, transform 0.2s;
 }
 .exp-box:hover {
