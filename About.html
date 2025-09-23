@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <title>About | Virtual Labs - Data Structures</title>
   <link rel="stylesheet" href="styles.css">
+   <!-- Asimovian -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+    
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: black;
       color: #fff;
       line-height: 1.6;
     }
@@ -26,18 +31,20 @@
     }
 
     .container {
-      max-width: 900px;
+      width: 90%;
       margin: auto;
       padding: 40px 20px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(24, 22, 41, 0.85);
+      width: 96%;
       border-radius: 12px;
       padding: 30px;
       margin-bottom: 25px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 32px 0 rgba(80,32,122,0.12); /* removed the inset line */
       transition: transform 0.3s ease;
+      display: flex;
     }
 
     .card:hover {
@@ -45,7 +52,7 @@
     }
 
     h2 {
-      color: #00d4ff;
+      color: white;
       margin-top: 0;
     }
 
@@ -59,8 +66,8 @@
     }
 
     ul li::before {
-      content: "✔️ ";
-      color: #00d4ff;
+      content: " ";
+      color: white;
     }
 
     footer {
@@ -101,15 +108,18 @@
   <div class="container">
 
     <div class="card">
-      <h2>Our Mission</h2>
-      <p>The Virtual Labs platform aims to make learning Data Structures interactive and practical. 
-         Instead of just reading theory, students can perform experiments and run simulations to 
-         understand concepts like arrays, stacks, queues, linked lists, trees, and graphs in depth.</p>
+      <div>
+      <h2 style="font-family: ASIMOVIAN;">#Our Mission</h2>
+      <p class="desc">The Virtual Labs platform aims to make<br> learning Data Structures interactive and practical. <br>
+         Instead of just reading theory,<br> students can perform experiments and run<br> simulations to 
+         understand concepts like arrays, stacks,<br> queues, linked lists, trees, and graphs in depth.</p>
+      </div>
+         <img src="about1.jpeg" height="300px" width="300px">
     </div>
 
     <div class="card">
-      <h2>What We Offer</h2>
-      <ul>
+      <h2 style="font-family: ASIMOVIAN;">What We Offer</h2>
+      <ul class="desc">
         <li>Interactive simulations of common data structures</li>
         <li>Step-by-step experiments to visualize algorithms</li>
         <li>Hands-on practice for students preparing for exams and interviews</li>
@@ -118,9 +128,9 @@
     </div>
 
     <div class="card">
-      <h2>Who Can Use It?</h2>
-      <p>This platform is designed for:</p>
-      <ul>
+      <h2 style="font-family: ASIMOVIAN;">Who Can Use It?</h2>
+      <p class="desc">This platform is designed for:</p>
+      <ul class="desc">
         <li>Engineering and computer science students</li>
         <li>Beginners learning Data Structures and Algorithms (DSA)</li>
         <li>Educators looking for visual teaching aids</li>
@@ -129,8 +139,8 @@
     </div>
 
     <div class="card">
-      <h2>Why Choose Virtual Labs?</h2>
-      <p>Data Structures can be abstract and difficult to visualize. 
+      <h2 style="font-family: ASIMOVIAN;">Why Choose Virtual Labs?</h2>
+      <p class="desc">Data Structures can be abstract and difficult to visualize. 
          With our Virtual Labs, you can <b>see algorithms in action</b>, 
          debug step by step, and develop an intuitive understanding of 
          complex topics that are otherwise tough to grasp from books alone.</p>
