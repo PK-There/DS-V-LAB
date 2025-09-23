@@ -220,16 +220,25 @@ document.querySelectorAll('.menu-link').forEach(link => {
 });
 
 document.querySelector('.start-btn').addEventListener('click', function() {
+    // Reset active menu
     document.querySelectorAll('.menu-link').forEach(l => l.classList.remove('active'));
-    document.querySelector('.menu-link').classList.add('active');
-    const target = document.querySelector('#introduction');
-    if(target) {
-        window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: 'smooth'
-        });
-    }
+    document.querySelector('[data-section="introduction"]').classList.add('active');
+    
+    // Hide all sections
+    document.querySelectorAll('.lab-section').forEach(sec => sec.style.display = 'none');
+    
+    // Show Introduction
+    const target = document.getElementById('introduction');
+    target.style.display = 'block';
+    
+    // Scroll smoothly
+    window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: 'smooth'
+    });
 });
+
+  
 
 const navbarContainer = document.querySelector('.section-navbar-container');
 const navbarOffset = navbarContainer.offsetTop;
