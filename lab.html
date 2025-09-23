@@ -173,7 +173,20 @@
         </div>
     </div>
     <div id="experiments" class="lab-section" style="display:none;">
-        <!-- List of experiments content here -->
+        <div style="width: 85%; margin: 22px auto; background: #181629; border: 2px solid #838CE5; border-radius: 18px; box-shadow: 0 2px 16px #838CE555; padding: 2.5rem 2rem; color: #fff; font-family: 'Inter', Arial, sans-serif; font-size: 1.15rem; text-align: left;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; justify-items: center;">
+                <div class="exp-box">EXP 1</div>
+                <div class="exp-box">EXP 2</div>
+                <div class="exp-box">EXP 3</div>
+                <div class="exp-box">EXP 4</div>
+                <div class="exp-box">EXP 5</div>
+                <div class="exp-box">EXP 6</div>
+                <div class="exp-box">EXP 7</div>
+                <div class="exp-box">EXP 8</div>
+                <div class="exp-box">EXP 9</div>
+                <div class="exp-box">EXP 10</div>
+            </div>
+        </div>
     </div>
     <div id="audience" class="lab-section" style="display:none;">
         <!-- Target Audience content here -->
@@ -212,7 +225,7 @@ document.querySelectorAll('.menu-link').forEach(link => {
         const target = document.querySelector(this.getAttribute('href'));
         if(target) {
             window.scrollTo({
-                top: target.getBoundingClientRect().top + window.scrollY - 80, // adjust for header height
+                top: target.getBoundingClientRect().top + window.scrollY - 85, // adjust for header height
                 behavior: 'smooth'
             });
         }
