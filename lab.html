@@ -199,6 +199,28 @@
     </div>
 </div>
 
+<!-- Update your modal HTML style for larger size -->
+<div id="exp-modal" style="display:none; position:fixed; top:0; left:0; width:100vw;border-radius:42px; height:100vh; background:rgba(24,22,41,0.85); z-index:2000; align-items:center; justify-content:center;">
+  <div id="exp-modal-content" style="background:#181629; border:2px solid #838CE5; border-radius:42px; box-shadow:0 8px 32px #838CE599; width:85vw; height:80vh; max-width:1700px; max-height:900px; padding:0; color:#fff; font-family:'Inter', Arial, sans-serif; position:relative; display:flex;">
+    <span id="close-exp-modal" style="position:absolute; top:18px; right:22px; font-size:2rem; color:#838CE5; cursor:pointer;">&times;</span>
+    <div id="exp-modal-sidebar" style="width:220px; background:#181629; border-right:1.5px solid #838CE5; padding:40px 0 0 0; display:flex; flex-direction:column; align-items:flex-start;">
+      <button class="exp-modal-side-btn active">AIM</button>
+      <button class="exp-modal-side-btn">Theory</button>
+      <button class="exp-modal-side-btn">Simulation</button>
+      <button class="exp-modal-side-btn">References</button>
+      <button class="exp-modal-side-btn">Feedback</button>
+    </div>
+    <div id="exp-modal-main" style="flex:1; padding:40px 48px 40px 48px; overflow-y:auto;">
+      <h2 id="exp-modal-title" style="color:#00bfff; font-weight:700; margin-bottom:1.5rem; text-align:center;">EXP 1</h2>
+      <div id="exp-modal-section-content">
+        <!-- Default content for AIM -->
+        <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3>
+        <p style="font-size:1.15rem; color:#fff;">Describe the aim of EXP 1 here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', function(e) {
@@ -262,6 +284,43 @@ window.addEventListener('scroll', function() {
     } else {
         navbarContainer.classList.remove('section-navbar-fixed');
     }
+});
+
+// Modal logic for experiment boxes
+document.querySelectorAll('.exp-box').forEach(box => {
+    box.addEventListener('click', function() {
+        document.getElementById('exp-modal-title').textContent = this.textContent;
+        document.getElementById('exp-modal').style.display = 'flex';
+        // Reset sidebar to Aim
+        document.querySelectorAll('.exp-modal-side-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelector('.exp-modal-side-btn').classList.add('active');
+        document.getElementById('exp-modal-section-content').innerHTML = `
+            <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Aim</h3>
+            <p style="font-size:1.15rem; color:#fff;">Describe the aim of ${this.textContent} here.</p>
+        `;
+    });
+});
+document.getElementById('close-exp-modal').onclick = function() {
+    document.getElementById('exp-modal').style.display = 'none';
+};
+document.getElementById('exp-modal').addEventListener('click', function(e) {
+    if (e.target === this) this.style.display = 'none';
+});
+
+// Sidebar tab switching
+const sectionContents = {
+    "AIM": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3><p style="font-size:1.15rem; color:#fff;">Describe the aim of this experiment here.</p>`,
+    "Theory": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Theory</h3><p style="font-size:1.15rem; color:#fff;">Theory content goes here.</p>`,
+    "Simulation": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Simulation</h3><p style="font-size:1.15rem; color:#fff;">Simulation details go here.</p>`,
+    "References": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">References</h3><p style="font-size:1.15rem; color:#fff;">References and resources go here.</p>`,
+    "Feedback": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Feedback</h3><p style="font-size:1.15rem; color:#fff;">Feedback form or info goes here.</p>`
+};
+document.querySelectorAll('.exp-modal-side-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.exp-modal-side-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById('exp-modal-section-content').innerHTML = sectionContents[this.textContent] || "";
+    });
 });
 </script>
 </body>
