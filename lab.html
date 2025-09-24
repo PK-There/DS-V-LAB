@@ -359,7 +359,7 @@ Menu (Repeat Until Exit):
         </ul>
     </p>
     <h4 style="color:#00bfff; margin-top:1.5rem;">Infix to Prefix Conversion</h4>
-    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left: 1.2rem;">
         <li>Operators come before operands → e.g., + A B.</li>
         <li>No parentheses required.</li>
         <li>Uses reverse logic → reverse infix → convert to postfix → reverse result.</li>
@@ -367,7 +367,7 @@ Menu (Repeat Until Exit):
         <li>Evaluation order → right to left.</li>
     </ul>
     <h4 style="color:#00bfff; margin-top:1.5rem;">Infix to Postfix Conversion</h4>
-    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left: 1.2rem;">
         <li>Operators come after operands → e.g., A B +.</li>
         <li>No parentheses required.</li>
         <li>Evaluated left to right.</li>
@@ -375,7 +375,7 @@ Menu (Repeat Until Exit):
         <li>Widely used in calculators and interpreters.</li>
     </ul>
     <h4 style="color:#00bfff; margin-top:1.5rem;">Applications</h4>
-    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left: 1.2rem;">
         <li><strong>Compiler Design:</strong> Converts programmer-written infix expressions into prefix or postfix. Simplifies parsing and code generation.</li>
         <li><strong>Expression Evaluation in Calculators:</strong> Scientific calculators and stack-based machines use postfix (RPN). Eliminates parentheses and precedence complexity.</li>
     </ul>
@@ -481,12 +481,16 @@ document.querySelectorAll('.exp-box').forEach(box => {
         document.getElementById('exp-modal').style.display = 'flex';
         document.querySelectorAll('.exp-modal-side-btn').forEach(btn => btn.classList.remove('active'));
         document.querySelector('.exp-modal-side-btn').classList.add('active');
-        // Show AIM by default
-        document.getElementById('exp-modal-section-content').innerHTML = `
-            <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3>
-            <p style="font-size:1.15rem; color:#fff;">Describe the aim of ${this.textContent} here.</p>
-        `;
-        // Store current experiment for sidebar switching
+        // Show AIM by default, custom for EXP 1 and EXP 2
+        let aimContent = `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3>`;
+        if (this.textContent === "EXP 1") {
+            aimContent += `<p style="font-size:1.15rem; color:#fff;">Write a program to implement functions on Stack ADT using an array.</p>`;
+        } else if (this.textContent === "EXP 2") {
+            aimContent += `<p style="font-size:1.15rem; color:#fff;">Write a program to convert and solve expression from <br>(a) Infix to Prefix <br>(b) Infix to Postfix</p>`;
+        } else {
+            aimContent += `<p style="font-size:1.15rem; color:#fff;">Describe the aim of ${this.textContent} here.</p>`;
+        }
+        document.getElementById('exp-modal-section-content').innerHTML = aimContent;
         document.getElementById('exp-modal').setAttribute('data-exp', this.textContent);
     });
 });
@@ -503,7 +507,17 @@ document.querySelectorAll('.exp-modal-side-btn').forEach(btn => {
         document.querySelectorAll('.exp-modal-side-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
         const exp = document.getElementById('exp-modal').getAttribute('data-exp');
-        if (this.textContent === "Theory" && expTheory[exp]) {
+        if (this.textContent === "AIM") {
+            let aimContent = `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3>`;
+            if (exp === "EXP 1") {
+                aimContent += `<p style="font-size:1.15rem; color:#fff;">Write a program to implement functions on Stack ADT using an array.</p>`;
+            } else if (exp === "EXP 2") {
+                aimContent += `<p style="font-size:1.15rem; color:#fff;">Write a program to convert and solve expression from <br>(a) Infix to Prefix <br>(b) Infix to Postfix</p>`;
+            } else {
+                aimContent += `<p style="font-size:1.15rem; color:#fff;">Describe the aim of ${exp} here.</p>`;
+            }
+            document.getElementById('exp-modal-section-content').innerHTML = aimContent;
+        } else if (this.textContent === "Theory" && expTheory[exp]) {
             document.getElementById('exp-modal-section-content').innerHTML = expTheory[exp];
         } else {
             document.getElementById('exp-modal-section-content').innerHTML = `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">${this.textContent}</h3><p style="font-size:1.15rem; color:#fff;">Content for ${this.textContent} of ${exp}.</p>`;
