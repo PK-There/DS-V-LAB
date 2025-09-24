@@ -64,7 +64,7 @@
         </div>
         <div class="lab-feature-box" style="background: #181629; border: 2px solid #838CE5; border-radius: 18px; width: 320px; padding: 2.5rem 1rem; box-shadow: 0 2px 16px #838CE555;">
             <div style="background: #00bfff; border-radius: 12px; width: 64px; height: 64px; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center;">
-                <span style="font-size: 2rem; color: #fff;">⏰</span>
+                <span style="font-size: 2rem, color: #fff;">⏰</span>
             </div>
             <div style="font-size: 2rem; color: #00bfff; font-weight: 700;">24/7</div>
             <div style="color: #838CE5; font-size: 1.1rem; margin-top: 0.5rem;">Lab Access</div>
@@ -199,10 +199,10 @@
     </div>
 </div>
 
-<!-- Update your modal HTML style for larger size -->
-<div id="exp-modal" style="display:none; position:fixed; top:0; left:0; width:100vw;border-radius:42px; height:100vh; background:rgba(24,22,41,0.85); z-index:2000; align-items:center; justify-content:center;">
-  <div id="exp-modal-content" style="background:#181629; border:2px solid #838CE5; border-radius:42px; box-shadow:0 8px 32px #838CE599; width:85vw; height:80vh; max-width:1700px; max-height:900px; padding:0; color:#fff; font-family:'Inter', Arial, sans-serif; position:relative; display:flex;">
-    <span id="close-exp-modal" style="position:absolute; top:18px; right:22px; font-size:2rem; color:#838CE5; cursor:pointer;">&times;</span>
+<!-- Modal container -->
+<div id="exp-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(24,22,41,0.85); z-index:2000; align-items:center; justify-content:center; border-radius:48px;">
+  <div id="exp-modal-content" style="background:#181629; border:2px solid #838CE5; border-radius:0px; box-shadow:0 8px 32px #838CE599; width:85vw; height:80vh; max-width:1700px; max-height:900px; padding:0; color:#fff; font-family:'Inter', Arial, sans-serif; position:relative; display:flex;">
+    <span id="close-exp-modal" style="position:absolute; top:18px; right:22px; font-size:2rem; color:#838CE5; cursor:pointer; border-radius:48px;">&times;</span>
     <div id="exp-modal-sidebar" style="width:220px; background:#181629; border-right:1.5px solid #838CE5; padding:40px 0 0 0; display:flex; flex-direction:column; align-items:flex-start;">
       <button class="exp-modal-side-btn active">AIM</button>
       <button class="exp-modal-side-btn">Theory</button>
@@ -219,6 +219,194 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- EXP 1 Theory Content -->
+<div id="exp1-theory-content" style="padding: 0 0 0 0;">
+    <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Stack Data Structure</h3>
+    <p style="font-size:1.15rem; color:#fff;">
+        <strong>Definition</strong><br>
+        A stack is a linear data structure that follows the Last In, First Out (LIFO) principle.<br>
+        The last element inserted is the first one to be removed.<br>
+        Insertion and deletion are allowed only from one end, called the top of the stack.
+    </p>
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+        <li><strong>Main operations:</strong>
+            <ul>
+                <li>Push → Insert an element.</li>
+                <li>Pop → Remove the top element.</li>
+                <li>Peek/Top → View the top element without removing it.</li>
+            </ul>
+        </li>
+        <li><strong>Basic Concept</strong>
+            <ul>
+                <li>A stack ensures a strict LIFO order.</li>
+                <li>Elements are added and removed only from the top.</li>
+                <li>Useful for problems requiring reversing order or tracking recent actions.</li>
+            </ul>
+        </li>
+        <li><strong>Basic Applications</strong>
+            <ul>
+                <li>Function Call Management → Call stack.</li>
+                <li>Undo/Redo Operations → In text editors.</li>
+                <li>Expression Evaluation & Syntax Parsing → In compilers.</li>
+                <li>Backtracking Algorithms → Maze or puzzle solving.</li>
+            </ul>
+        </li>
+        <li><strong>Implementation</strong>
+            <ul>
+                <li>Arrays (fixed size).</li>
+                <li>Linked Lists (dynamic size).</li>
+            </ul>
+        </li>
+        <li><strong>Standard Operations on Stack</strong>
+            <ul>
+                <li>Push – Add element to the top. If full (array-based), causes overflow.</li>
+                <li>Pop – Remove top element. If empty, causes underflow.</li>
+                <li>Peek (Top) – Show top element without removing.</li>
+                <li>isEmpty() – Check if stack is empty.</li>
+                <li>isFull() – Check if stack is full (array-based).</li>
+                <li>Size() – Number of elements in stack.</li>
+                <li>Display() – Print all elements from top to bottom.</li>
+            </ul>
+        </li>
+        <li><strong>Features of Stack</strong>
+            <ul>
+                <li>LIFO Structure – Last in, first out.</li>
+                <li>Single-End Operations – Insert/delete only at top.</li>
+                <li>Efficient Memory Use – In linked list implementation.</li>
+                <li>Limited Operations – Only push, pop, peek, etc.</li>
+                <li>Simple to Implement – Easy concept and coding.</li>
+                <li>Static or Dynamic – Arrays (fixed) or Linked Lists (dynamic).</li>
+            </ul>
+        </li>
+        <li><strong>Advantages</strong>
+            <ul>
+                <li>Easy to use and manage.</li>
+                <li>Supports recursion (function calls use system stack).</li>
+                <li>Helps in memory management during recursion.</li>
+                <li>Supports backtracking (undo, maze solving, history).</li>
+                <li>Useful for expression evaluation (e.g., infix → postfix).</li>
+            </ul>
+        </li>
+        <li><strong>Disadvantages</strong>
+            <ul>
+                <li>Limited Access → Only top element accessible.</li>
+                <li>Overflow/Underflow Risks.</li>
+                <li>Fixed Size (arrays) → Must be predefined.</li>
+                <li>Inefficient for Searching → No random access.</li>
+                <li>Memory Issues in Recursion → Deep recursion may cause stack overflow.</li>
+            </ul>
+        </li>
+        <li><strong>Algorithm for Stack Operations</strong>
+            <pre style="background:#23234a; color:#fff; padding:1rem; border-radius:8px; font-size:1rem;">
+Start
+Initialize empty list: stack = []
+Define MAX = 5 (max size).
+
+Push()
+If len(stack) == MAX → Overflow.
+Else → Insert element at top.
+
+Pop()
+If empty → Underflow.
+Else → Remove and return top element.
+
+Peek()
+If not empty → Show stack[-1].
+Else → Print "Empty".
+
+isFull()
+If len(stack) == MAX → Print "Full".
+Else → Print "Not Full".
+
+isEmpty()
+If empty → Print "Empty".
+Else → Print "Not Empty".
+
+Display()
+If not empty → Show elements (top → bottom).
+Else → Print "Empty".
+
+Menu (Repeat Until Exit):
+1 → Push
+2 → Pop
+3 → Peek
+4 → isFull
+5 → isEmpty
+6 → Display
+7 → Exit
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<!-- EXP 2 Theory Content -->
+<div id="exp2-theory-content" style="padding: 0 0 0 0;">
+    <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Infix, Prefix, and Postfix Expressions</h3>
+    <p style="font-size:1.15rem; color:#fff;">
+        <strong>Introduction</strong><br>
+        <ul>
+            <li><strong>Infix Notation:</strong> Operators are written between operands (e.g., A + B).</li>
+            <li><strong>Prefix (Polish) Notation:</strong> Operators are written before operands (e.g., + A B).</li>
+            <li><strong>Postfix (Reverse Polish) Notation:</strong> Operators are written after operands (e.g., A B +).</li>
+        </ul>
+        👉 Computers prefer prefix or postfix because:
+        <ul>
+            <li>No parentheses are required.</li>
+            <li>Operator precedence and associativity are inherently managed.</li>
+            <li>Parsing and evaluation are easier.</li>
+        </ul>
+    </p>
+    <h4 style="color:#00bfff; margin-top:1.5rem;">Infix to Prefix Conversion</h4>
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+        <li>Operators come before operands → e.g., + A B.</li>
+        <li>No parentheses required.</li>
+        <li>Uses reverse logic → reverse infix → convert to postfix → reverse result.</li>
+        <li>Easier for compilers to parse and evaluate.</li>
+        <li>Evaluation order → right to left.</li>
+    </ul>
+    <h4 style="color:#00bfff; margin-top:1.5rem;">Infix to Postfix Conversion</h4>
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+        <li>Operators come after operands → e.g., A B +.</li>
+        <li>No parentheses required.</li>
+        <li>Evaluated left to right.</li>
+        <li>Uses a stack for managing operators and precedence.</li>
+        <li>Widely used in calculators and interpreters.</li>
+    </ul>
+    <h4 style="color:#00bfff; margin-top:1.5rem;">Applications</h4>
+    <ul style="color:#dcdcdc; font-size:1rem; line-height:1.6; padding-left:1.2rem;">
+        <li><strong>Compiler Design:</strong> Converts programmer-written infix expressions into prefix or postfix. Simplifies parsing and code generation.</li>
+        <li><strong>Expression Evaluation in Calculators:</strong> Scientific calculators and stack-based machines use postfix (RPN). Eliminates parentheses and precedence complexity.</li>
+    </ul>
+    <h4 style="color:#00bfff; margin-top:1.5rem;">Algorithm for Conversions</h4>
+    <strong>Infix → Postfix</strong>
+    <pre style="background:#23234a; color:#fff; padding:1rem; border-radius:8px; font-size:1rem;">
+Scan infix expression from left to right.
+If symbol is an operand, add to postfix expression.
+If symbol is an operator:
+    If stack is empty, or top is (, or top has lower precedence, push operator.
+    Else, pop higher/equal precedence operators to postfix, then push current operator.
+If symbol is (, push it to stack.
+If symbol is ), pop and add to postfix until ( is found (discard both parentheses).
+Repeat until expression ends.
+Pop remaining operators from stack to postfix.
+    </pre>
+    <strong>Infix → Prefix</strong>
+    <pre style="background:#23234a; color:#fff; padding:1rem; border-radius:8px; font-size:1rem;">
+Reverse the infix expression.
+Swap ( with ) and vice versa.
+Scan reversed expression from left to right.
+If symbol is an operand, add to prefix expression.
+If symbol is an operator:
+    If stack is empty, or top is (, or operator has higher precedence, push it.
+    Else, pop from stack until lower precedence operator is found, then push current operator.
+If symbol is (, push it to stack.
+If symbol is ), pop to prefix until ( is found (discard both parentheses).
+Repeat until expression ends.
+Pop remaining operators and add to prefix.
+Reverse the result to get final prefix expression.
+    </pre>
 </div>
 
 <script>
@@ -291,35 +479,35 @@ document.querySelectorAll('.exp-box').forEach(box => {
     box.addEventListener('click', function() {
         document.getElementById('exp-modal-title').textContent = this.textContent;
         document.getElementById('exp-modal').style.display = 'flex';
-        // Reset sidebar to Aim
         document.querySelectorAll('.exp-modal-side-btn').forEach(btn => btn.classList.remove('active'));
         document.querySelector('.exp-modal-side-btn').classList.add('active');
+        // Show AIM by default
         document.getElementById('exp-modal-section-content').innerHTML = `
-            <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Aim</h3>
+            <h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3>
             <p style="font-size:1.15rem; color:#fff;">Describe the aim of ${this.textContent} here.</p>
         `;
+        // Store current experiment for sidebar switching
+        document.getElementById('exp-modal').setAttribute('data-exp', this.textContent);
     });
-});
-document.getElementById('close-exp-modal').onclick = function() {
-    document.getElementById('exp-modal').style.display = 'none';
-};
-document.getElementById('exp-modal').addEventListener('click', function(e) {
-    if (e.target === this) this.style.display = 'none';
 });
 
 // Sidebar tab switching
-const sectionContents = {
-    "AIM": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">AIM</h3><p style="font-size:1.15rem; color:#fff;">Describe the aim of this experiment here.</p>`,
-    "Theory": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Theory</h3><p style="font-size:1.15rem; color:#fff;">Theory content goes here.</p>`,
-    "Simulation": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Simulation</h3><p style="font-size:1.15rem; color:#fff;">Simulation details go here.</p>`,
-    "References": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">References</h3><p style="font-size:1.15rem; color:#fff;">References and resources go here.</p>`,
-    "Feedback": `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">Feedback</h3><p style="font-size:1.15rem; color:#fff;">Feedback form or info goes here.</p>`
+const expTheory = {
+    "EXP 1": document.getElementById('exp1-theory-content').innerHTML,
+    "EXP 2": document.getElementById('exp2-theory-content').innerHTML
+    // Add more as needed
 };
+
 document.querySelectorAll('.exp-modal-side-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.exp-modal-side-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-        document.getElementById('exp-modal-section-content').innerHTML = sectionContents[this.textContent] || "";
+        const exp = document.getElementById('exp-modal').getAttribute('data-exp');
+        if (this.textContent === "Theory" && expTheory[exp]) {
+            document.getElementById('exp-modal-section-content').innerHTML = expTheory[exp];
+        } else {
+            document.getElementById('exp-modal-section-content').innerHTML = `<h3 style="color:#1a6ed8; font-size:2rem; margin-bottom:1rem;">${this.textContent}</h3><p style="font-size:1.15rem; color:#fff;">Content for ${this.textContent} of ${exp}.</p>`;
+        }
     });
 });
 </script>
