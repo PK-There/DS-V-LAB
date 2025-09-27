@@ -192,7 +192,7 @@ body {
 
 .hpb2b {
   border: none;
-  height: 250px;
+  height: 320px;
   width: 320px;
   margin: 20px;
   border-radius: 20px;
@@ -210,7 +210,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* fills, crops if needed */
+  object-fit: coer;   /* fills, crops if needed */
   border-radius: 20px; /* match parent radius */
 }
 
