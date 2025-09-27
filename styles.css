@@ -191,19 +191,29 @@ body {
 }
 
 .hpb2b {
-    border: none;
-    background: linear-gradient(135deg, #181629 60%, #838CE5 100%);
-    height: 250px;
-    width: 320px;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0 2px 16px #50207A33;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1.5px solid #838CE5;
+  border: none;
+  height: 250px;
+  width: 320px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px #50207A33;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1.5px solid #838CE5;
+  position: relative; /* important for img absolute positioning */
+  overflow: hidden;   /* hides image overflow */
 }
+
+.hpb2b img {
+  display: block;
+  position: absolute;  /* forces image to fill */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills, crops if needed */
+  border-radius: 20px; /* match parent radius */
+}
+
 .hpb2b:hover {
     transform: scale(1.04) translateY(-4px);
     box-shadow: 0 8px 32px #838CE555;
@@ -248,17 +258,16 @@ body {
 .section-navbar {
     display: flex;
     justify-content: center;
-    gap: 4.5rem;
-    margin-bottom: 22px;
+    gap: 4rem;
     margin-top: 32px;
     flex-wrap: wrap;
-    background: #838CE522;
+    background:#1c173a;
     position: sticky;
     top: 0;
+    padding: 20px;
     z-index: 100;
-    padding: 35px 0 -1px 0;
     box-shadow: 0 2px 16px #838CE522;
- 
+    border-radius: 70px;
 
 }
 
@@ -412,7 +421,6 @@ body {
 }
 
 .menu-link {
-    color: #1a6ed8;
     font-family: 'Inter', Arial, sans-serif;
     font-size: 1.3rem;
     text-decoration: underline;
@@ -420,16 +428,33 @@ body {
     padding: 0 8px;
     transition: color 0.15s;
     cursor: pointer;
-}
-.menu-link.active {
-    color: #ff6600;
-    font-weight: 700;
-    text-decoration: underline;
-}
-.menu-link:hover {
-    color: #27ae60;
+
+    padding:20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: monospace;
+    color:#D6B9FC;
+    position: relative;
+
 }
 
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;      
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #D6B9FC 0%, #838CE5 100%);
+  transition: width 0.3s ease;
+}
+.menu-link:hover::after {
+  width: 100%;
+}
+.menu-link.active {
+    font-weight: 700;
+    color: whitesmoke;
+} 
 
 .exp-box {
     margin-top:50px;
