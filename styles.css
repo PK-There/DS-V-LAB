@@ -263,8 +263,8 @@ body {
     flex-wrap: wrap;
     background:#1c173a;
     position: sticky;
-    top: 0;
-    padding: 20px;
+    top: 50px;
+    padding: 0px;
     z-index: 100;
     box-shadow: 0 2px 16px #838CE522;
     border-radius: 70px;
@@ -276,7 +276,7 @@ body {
     top: 58px;
     left: 0;
     width: 100%;
-    background:#838CE522;
+    background:#0c0c0c22;
     opacity: 0.95;
     z-index: 999;
     box-shadow: 0 4px 24px #838CE522;
@@ -424,8 +424,8 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     font-size: 1.3rem;
     text-decoration: underline;
-    font-weight: 600;
-    padding: 0 8px;
+    font-weight: 500;
+    padding: 0 5px;
     transition: color 0.15s;
     cursor: pointer;
 
