@@ -17,6 +17,67 @@
 
   <!-- Inter Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Add CSS to fix overlapping issues */
+    .section-navbar-container {
+        background: #181629;
+        padding: 0;
+        margin: 0;
+        border-bottom: 2px solid #838CE5;
+        z-index: 1000;
+    }
+
+    .section-navbar-fixed {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+        background: #181629 !important;
+        border-bottom: 2px solid #838CE5 !important;
+        box-shadow: 0 2px 10px rgba(131, 140, 229, 0.3) !important;
+    }
+
+    .section-navbar {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem 0;
+        background: #181629;
+    }
+
+    .menu-link {
+        color: #838CE5;
+        text-decoration: none;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+
+    /* Add padding when navbar is fixed to prevent overlap */
+    body.navbar-fixed #lab-content {
+        padding-top: 80px !important;
+    }
+
+    /* Ensure smooth transitions */
+    #lab-content {
+        transition: padding-top 0.3s ease;
+    }
+
+    /* Fix any potential z-index issues */
+    #header {
+        z-index: 2000;
+    }
+
+    #exp-modal {
+        z-index: 3000;
+    }
+  </style>
 </head>
 <body>
     <div id="header">
@@ -191,17 +252,29 @@
 </div>
     <div id="audience" class="lab-section" style="display:none;">
         <!-- Target Audience content here -->
+        <div style="width: 85%; margin: 22px auto; background: #181629; border: 2px solid #838CE5; border-radius: 18px; box-shadow: 0 2px 16px #838CE555; padding: 2.5rem 2rem; color: #fff; font-family: 'Inter', Arial, sans-serif; font-size: 1.15rem; text-align: left;">
+            <h3 style="color: #00bfff; margin-bottom: 1rem;">Target Audience</h3>
+            <p>Content for Target Audience section will be available here.</p>
+        </div>
     </div>
     <div id="alignment" class="lab-section" style="display:none;">
         <!-- Course Alignment content here -->
+        <div style="width: 85%; margin: 22px auto; background: #181629; border: 2px solid #838CE5; border-radius: 18px; box-shadow: 0 2px 16px #838CE555; padding: 2.5rem 2rem; color: #fff; font-family: 'Inter', Arial, sans-serif; font-size: 1.15rem; text-align: left;">
+            <h3 style="color: #00bfff; margin-bottom: 1rem;">Course Alignment</h3>
+            <p>Content for Course Alignment section will be available here.</p>
+        </div>
     </div>
     <div id="feedback" class="lab-section" style="display:none;">
         <!-- Feedback content here -->
+        <div style="width: 85%; margin: 22px auto; background: #181629; border: 2px solid #838CE5; border-radius: 18px; box-shadow: 0 2px 16px #838CE555; padding: 2.5rem 2rem; color: #fff; font-family: 'Inter', Arial, sans-serif; font-size: 1.15rem; text-align: left;">
+            <h3 style="color: #00bfff; margin-bottom: 1rem;">Feedback</h3>
+            <p>Content for Feedback section will be available here.</p>
+        </div>
     </div>
 </div>
 
 <!-- Modal container -->
-<div id="exp-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(24,22,41,0.85); z-index:2000; align-items:center; justify-content:center; border-radius:48px;">
+<div id="exp-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(24,22,41,0.85); z-index:3000; align-items:center; justify-content:center; border-radius:48px;">
   <div id="exp-modal-content" style="background:#181629; border:2px solid #838CE5; border-radius:0px; box-shadow:0 8px 32px #838CE599; width:85vw; height:80vh; max-width:1700px; max-height:900px; padding:0; color:#fff; font-family:'Inter', Arial, sans-serif; position:relative; display:flex;">
     <span id="close-exp-modal" style="position:absolute; top:18px; right:22px; font-size:2rem; color:#838CE5; cursor:pointer; border-radius:48px;">&times;</span>
     <div id="exp-modal-sidebar" style="width:220px; background:#181629; border-right:1.5px solid #838CE5; padding:40px 0 0 0; display:flex; flex-direction:column; align-items:flex-start;">
@@ -242,7 +315,7 @@ document.querySelectorAll('.menu-link').forEach(link => {
 document.querySelectorAll('.lab-section').forEach(sec => sec.style.display = 'none');
 document.getElementById('introduction').style.display = 'block';
 
-// Start button functionality
+// Start button functionality - FIXED VERSION
 document.querySelector('.start-btn').addEventListener('click', function() {
     // Reset active menu
     document.querySelectorAll('.menu-link').forEach(l => l.classList.remove('active'));
@@ -255,26 +328,32 @@ document.querySelector('.start-btn').addEventListener('click', function() {
     const target = document.getElementById('introduction');
     target.style.display = 'block';
 
-    // Scroll smoothly
+    // Add body class to handle fixed navbar spacing
+    document.body.classList.add('navbar-fixed');
+
+    // Scroll smoothly with proper offset accounting for fixed navbar
+    const navbarHeight = document.querySelector('.section-navbar-container').offsetHeight;
     window.scrollTo({
-        top: target.getBoundingClientRect().top + window.scrollY - 80,
+        top: target.getBoundingClientRect().top + window.scrollY - navbarHeight - 30,
         behavior: 'smooth'
     });
 });
 
-// Fixed navbar on scroll
+// Fixed navbar on scroll - IMPROVED VERSION
 const navbarContainer = document.querySelector('.section-navbar-container');
 const navbarOffset = navbarContainer.offsetTop;
 
 window.addEventListener('scroll', function() {
     if (window.scrollY > navbarOffset) {
         navbarContainer.classList.add('section-navbar-fixed');
+        document.body.classList.add('navbar-fixed');
     } else {
         navbarContainer.classList.remove('section-navbar-fixed');
+        document.body.classList.remove('navbar-fixed');
     }
 });
 
-// Theory content stored as JavaScript objects (moved from HTML to JS)
+// Theory content stored as JavaScript objects
 const experimentData = {
     "EXP 1": {
         aim: "Write a program to implement functions on Stack ADT using an array.",
